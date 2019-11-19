@@ -153,7 +153,16 @@
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('asset/contactform/contactform.js') }}"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script> 
+  <script type="text/javascript"> 
+     $(document).ready(function() {
+    $('.jugadores').select2({ 
+      placeholder: "selecciona entrenador"
+    });
+});
+  </script>
+
+
   <!-- Template Main Javascript File -->
   <script src="{{ asset('asset/js/main.js') }}"></script> 
 
