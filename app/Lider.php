@@ -18,5 +18,10 @@ class Lider extends Model
     public function settipoAttribute($value) 
     {
         $this->attributes['tipo'] = strtolower($value);
-    }
+    } 
+
+    public function jugadores() 
+   { 
+    return $this->belongsToMany('App\Jugador');
+   }
 }

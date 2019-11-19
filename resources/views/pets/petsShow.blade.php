@@ -7,8 +7,8 @@
 			      <div class="speaker">
                   <p >FOTO</p>
                 </div>
-                <h4>Nombre <span>  Edad<span> </h4>
-                <p>Fecha</p>
+                <h4>Nombre <span>  Tipo<span> </h4>
+                <p>Lider</p>
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
@@ -17,21 +17,20 @@
 			</div>
     </div>   
 
-    @if(session()->has('upj'))
+    @if(session()->has('upp'))
        <div class="alert alert-success"> 
-         {{ session()->get('upj')}}
+         {{ session()->get('upp')}}
         </div> 
       @endif  
     <div class="row schedule-item">
-              <div class="col-md-2"><i>{{ $jugadores->id}}</i></div>
+              <div class="col-md-2"><i>{{ $pets->id}}</i></div>
               <div class="col-md-6">  
-                <h4>{{ $jugadores->nombre}}<span>  {{ $jugadores->edad}}<span> </h4>
-                <p>{{ $jugadores->created_at}} <span>{{ $jugadores->updated_at}}</span></p>
+                <h4>{{ $pets->nombre}}<span>  {{ $pets->tipo}}<span> </h4>
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
-                <a href="{{route('jugadores.edit',$jugadores->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
-                <form action="{{route('jugadores.destroy',$jugadores->id)}}" method="POST">  
+                <a href="{{route('pets.edit',$pets->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
+                <form action="{{route('pets.destroy',$pets->id)}}" method="POST">  
                     @csrf
                     @method('DELETE') 
                     

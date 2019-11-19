@@ -37,12 +37,20 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
 
+        $lider = new Lider;
+        //Lider::create($request->all());   
+        $lider->nombre = $request->nombre; 
+        $lider->tipo = $request->tipo; 
 
-        Lider::create($request->all());  
+        $lider->save(); 
+
+        $lider->jugadores()->sync($request->jugadores, false);
+
         session()->flash('storel','Agregado realizado');
         return redirect()->route('lideres.index');
     }
@@ -54,8 +62,9 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Lider $lideres)
-    {
-        return view('lideres.lideresShow',compact('lideres'));
+    { 
+        $jugadores = Jugador::pluck('nombre','id');
+        return view('lideres.lideresShow', ['lideres' => $lideres, 'jugadores' => $jugadores]);
     }
 
     /**
@@ -65,8 +74,9 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Lider $lideres)
-    {
-        return view('lideres.lideresForm',compact('lideres'));
+    { 
+        $jugadores = Jugador::pluck('nombre','id');  
+        return view('lideres.lideresFormUp', ['lideres' => $lideres, 'jugadores' => $jugadores]);
     }
 
     /**
@@ -87,7 +97,7 @@ class LiderController extends Controller
         
 
         $lideres->save();  
-
+        $lideres->jugadores()->sync($request->jugadores);
         session()->flash('upl','Actualizado realizado');
         return redirect()->route('lideres.show',$lideres->id);
     }
@@ -100,6 +110,7 @@ class LiderController extends Controller
      */
     public function destroy(Lider $lideres)
     {
+        
         $lideres->delete();  
         session()->flash('statusl','Destruido realizado');
         return redirect()->route('lideres.index');

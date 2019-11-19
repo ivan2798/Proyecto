@@ -52,15 +52,12 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{route('jueces')}}">Jueces</a></li>  
-          
+          <li><a href="{{route('jueces')}}">Jueces</a></li> 
           <li><a href="{{route('items')}}">Items </a></li>
-          <li><a href="{{ route('jugadores.index')}}">L jugadores</a></li>
-          <li><a href="{{ route('lideres.index')}}">L lideres</a></li> 
-          <li><a href="{{ route('pets.index')}}">L pokemons</a></li>
-          <li><a href="{{ route('jugadores.create')}}">F jugadores</a></li>
-          <li><a href="{{ route('lideres.create')}}">F lideres</a></li> 
-          <li><a href="{{ route('pets.create')}}">F pokemons</a></li>
+          <li><a href="{{ route('jugadores.index')}}">Lista jugadores</a></li>
+          <li><a href="{{ route('lideres.index')}}">Lista lideres</a></li>
+          <li><a href="{{ route('jugadores.create')}}">Formulario jugadores</a></li>
+          <li><a href="{{ route('lideres.create')}}">Formulario lideres</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -159,11 +156,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script> 
   <script type="text/javascript"> 
-     $(document).ready(function() {
-    $('.jugadores').select2({ 
-      placeholder: "selecciona entrenador"
-    });
-});
+    
+    $('.jugadores').select2().val({!! json_encode($lideres->jugadores()->allRelatedIds()) !!}).trigger('change');
+
   </script>
 
 
@@ -175,4 +170,3 @@
 </body>
 
 </html>
- 

@@ -14,7 +14,7 @@ class CreateJugadorsTable extends Migration
     public function up()
     {
         Schema::create('jugadors', function (Blueprint $table) {
-            $table->bigIncrements('id'); 
+            $table->increments('id'); 
             $table->string('nombre'); 
             $table->integer('edad');
             $table->timestamps();

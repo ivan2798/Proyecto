@@ -1,4 +1,4 @@
-@extends('layouts.form') 
+@extends('layouts.forma') 
 @section('contactame')
 
 
@@ -51,10 +51,9 @@
 
       </div>
   
- <div class="form">  
-        {!! Form::open(['route' => 'lideres.store']) !!}
-   
-       @csrf
+ <div class="form"> 
+      {!! Form::model($lideres, ['route' => ['lideres.update', $lideres->id], 'method' => 'PATCH']) !!} 
+    @csrf
       <div class="form-row">
         <div class="form-group col-md-6">   
           {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 

@@ -20,8 +20,12 @@ Auth::routes();
 
 Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores']);
 
-Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']); 
-                           
+Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']);  
+
+Route::resource('/pets','PetController')->parameters(['pets' => 'pets']); 
+
+Route::get('/items','ItemController@index')->name('items'); 
+
 Route::get('/jueces','JuezController@historia')->name('jueces');
 
 Route::get('/home', 'HomeController@index')->name('home');

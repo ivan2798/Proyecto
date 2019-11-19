@@ -25,7 +25,12 @@
     <div class="row schedule-item">
               <div class="col-md-2"><i>{{ $lideres->id}}</i></div>
               <div class="col-md-6">  
-                <h4>{{ $lideres->nombre}}<span>  {{ $lideres->tipo}}<span> </h4>
+                <h4>{{ $lideres->nombre}}<span>  {{ $lideres->tipo}}<span> </h4> 
+                <p> 
+                 @foreach($lideres->jugadores as $jugador) 
+                    <span class="badge badge-primary"> {{ $jugador->nombre }}</span>
+                 @endforeach
+               </p> 
               </div> 
 			  <div>  
 			  <div class="col-md-4">  

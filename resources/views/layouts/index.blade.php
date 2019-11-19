@@ -51,11 +51,14 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{route('jueces')}}">Jueces</a></li>
-          <li><a href="{{ route('jugadores.index')}}">Lista jugadores</a></li>
-          <li><a href="{{ route('lideres.index')}}">Lista lideres</a></li>
-          <li><a href="{{ route('jugadores.create')}}">Formulario jugadores</a></li>
-          <li><a href="{{ route('lideres.create')}}">Formulario lideres</a></li>
+          <li><a href="{{route('jueces')}}">Jueces</a></li> 
+          <li><a href="{{route('items')}}">Items </a></li>
+          <li><a href="{{ route('jugadores.index')}}">L jugadores</a></li>
+          <li><a href="{{ route('lideres.index')}}">L lideres</a></li> 
+          <li><a href="{{ route('pets.index')}}">L pokemons</a></li>
+          <li><a href="{{ route('jugadores.create')}}">F jugadores</a></li>
+          <li><a href="{{ route('lideres.create')}}">F lideres</a></li> 
+          <li><a href="{{ route('pets.create')}}">F pokemons</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -112,7 +115,8 @@
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a href = "{{ route('jugadores.create')}}" class="btn btn-succes"> AGREGAR JUGADOR</a>  
-            <a href = "{{ route('lideres.create')}}" class="btn btn-succes">AGREGAR LIDER</a> 
+            <a href = "{{ route('lideres.create')}}" class="btn btn-succes">AGREGAR LIDER</a>  
+            <a href = "{{ route('pets.create')}}" class="btn btn-succes">AGREGAR POKEMON</a> 
           </li>
         </ul>
 

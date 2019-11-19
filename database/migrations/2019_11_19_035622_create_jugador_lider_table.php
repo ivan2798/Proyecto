@@ -14,7 +14,15 @@ class CreateJugadorLiderTable extends Migration
     public function up()
     {
         Schema::create('jugador_lider', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id');  
+
+
+            $table->integer('jugador_id')->unsigned();    
+            $table->integer('lider_id')->unsigned();  
+
+            $table->foreign('jugador_id')->references('id')->on('jugadors')->onDelete('cascade');;                 
+            $table->foreign('lider_id')->references('id')->on('liders')->onDelete('cascade');;   
+
             $table->timestamps();
         });
     }

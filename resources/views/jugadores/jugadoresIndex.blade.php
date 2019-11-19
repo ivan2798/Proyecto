@@ -38,7 +38,9 @@
   <a href="{{route('jugadores.show',$jugador->id)}}" >_VER</a>
     </div>
     <h4>{{ $jugador->nombre}} <span> {{ $jugador->edad}}</span></h4>
-    <p>{{ $jugador->created_at}} <span>{{ $jugador->updated_at}}</span></p>
+    <p> <span class="badge badge-success">{{ $jugador->created_at}}</span> 
+     <span span class="badge badge-success">{{ $jugador->updated_at}}</span> 
+     </p>
   </div>  
   </div>   
 @endforeach

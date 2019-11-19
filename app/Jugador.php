@@ -14,5 +14,8 @@ class Jugador extends Model
         return strtoupper($value);
     } 
 
-   
+   public function lideres() 
+   { 
+       return $this->belongsToMany('App\Lider');
+   }
 }
