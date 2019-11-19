@@ -51,23 +51,27 @@
   
  <div class="form"> 
     @if(isset($lideres))  
-      <form action="{{route('lideres.update',$lideres->id)}}" method="POST"  > 
+      {!! Form::model($lideres, ['route' => ['lideres.update', $lideres->id], 'method' => 'PATCH']) !!}
       @method('PATCH')
     @else 
-      <form action="{{route('lideres.store')}}" method="POST" > 
+        {!! Form::open(['route' => 'lideres.store']) !!}
     @endif 
     @csrf
       <div class="form-row">
-        <div class="form-group col-md-6">  
-          <input type="text" name="nombre" value="{{$lideres->nombre ?? ''}}" class="form-control" id="nombre" placeholder="Nombre">  
+        <div class="form-group col-md-6">   
+          {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 
         </div>
         <div class="form-group col-md-6"> 
-          <input type="text" name="tipo" value="{{$lideres->tipo ?? ''}}" class="form-control" id="tipo" placeholder="Tipo">
-        </div>
+          {!! Form::text('tipo', null, ['placeholder' => 'tipo','class' => 'form-control']) !!} 
+        </div> 
       </div>
-      
+      <div class="form-group">
+          {!! Form::label('selecciona entrenador') !!}
+          {!! Form::select('jugadores[]',$jugadores,null,['multiple' => 'multiple', 'class' => 'form-control jugadores']) !!}
+      </div>
 
-      <div class="text-center"><button type="submit">ENVIAR</button></div> 
+      <div class="text-center"><button type="submit">ENVIAR</button></div>  
+      {!! Form::close() !!}
       </div>
     </form>
   

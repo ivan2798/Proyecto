@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Lider;
+use App\Lider; 
+use App\Jugador;
 use Illuminate\Http\Request;
 
 class LiderController extends Controller
@@ -24,8 +25,9 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('lideres.lideresForm');
+    { 
+        $jugadores = Jugador::pluck('nombre','id');
+        return view('lideres.lideresForm',compact('jugadores'));
     }
 
     /**

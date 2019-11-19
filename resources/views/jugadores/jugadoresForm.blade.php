@@ -50,24 +50,23 @@
       </div>
   
  <div class="form"> 
-    @if(isset($jugadores))  
-      <form action="{{route('jugadores.update',$jugadores->id)}}" method="POST"  > 
-      @method('PATCH')
+    @if(isset($jugadores))    
+      {!! Form::model($jugadores, ['route' => ['jugadores.update', $jugadores->id], 'method' => 'PATCH']) !!}
     @else 
-      <form action="{{route('jugadores.store')}}" method="POST" > 
+      {!! Form::open(['route' => 'jugadores.store']) !!}
     @endif 
     @csrf
       <div class="form-row">
         <div class="form-group col-md-6">  
-          <input type="text" name="nombre" value="{{$jugadores->nombre ?? ''}}" class="form-control" id="nombre" placeholder="Nombre">  
+          {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 
         </div>
         <div class="form-group col-md-6"> 
-          <input type="number" name="edad" value="{{$jugadores->edad ?? ''}}" class="form-control" id="edad" placeholder="Edad">
+          {!! Form::number('edad', null, ['placeholder' => 'edad','class' => 'form-control']) !!}
         </div>
       </div>
       
-
-      <div class="text-center"><button type="submit">ENVIAR</button></div> 
+      <div class="text-center"><button type="submit">ENVIAR</button></div>  
+      {!! Form::close() !!}
       </div>
     </form>
   

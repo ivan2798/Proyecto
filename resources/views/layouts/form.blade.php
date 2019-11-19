@@ -23,6 +23,7 @@
   <link href="{{ asset('asset/lib/animate/animate.min.css') }}" rel="stylesheet">
   <link href="{{ asset('asset/lib/venobox/venobox.css') }}" rel="stylesheet">
   <link href="{{ asset('asset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 
   <!-- Main Stylesheet File -->
   <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
@@ -152,8 +153,12 @@
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('asset/contactform/contactform.js') }}"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
   <!-- Template Main Javascript File -->
-  <script src="{{ asset('asset/js/main.js') }}"></script>
+  <script src="{{ asset('asset/js/main.js') }}"></script> 
+
+
+  
 </body>
 
 </html>
