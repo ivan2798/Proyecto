@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Pet;
+use App\Pet; 
+use App\item;
 use Illuminate\Http\Request;
 
 class PetController extends Controller
@@ -14,7 +15,8 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::all();  
+        $pets = Pet::all();   
+        $items = item::all();
         return view('pets.petsIndex', compact('pets'));
     }
 
@@ -24,8 +26,10 @@ class PetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('pets.petsForm');
+    { 
+        $items = item::pluck('tipo');
+        return view('pets.petsForm', ['items' => $items]); 
+
     }
 
     /**

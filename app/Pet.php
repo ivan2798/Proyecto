@@ -8,5 +8,11 @@ class Pet extends Model
 {
     protected $table = 'pets';   
     public $timestamps = false;
-    protected $fillable = ['nombre','tipo'];  
+    protected $fillable = ['nombre','tipo','items_id'];   
+
+    public function item() 
+{ 
+    return $this->belongsTo(item::class);
 }
+}
+

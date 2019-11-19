@@ -62,7 +62,13 @@
         </div>
         <div class="form-group col-md-6"> 
           {!! Form::text('tipo', null, ['placeholder' => 'tipo','class' => 'form-control']) !!}
-        </div>
+        </div> 
+      </div> 
+
+
+      <div class="form-group">
+          {!! Form::label('selecciona item') !!}
+          {!! Form::select('items_id',$items,null,['class' => 'form-control']) !!}
       </div>
       
       <div class="text-center"><button type="submit">ENVIAR</button></div>  
