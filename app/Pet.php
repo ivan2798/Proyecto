@@ -8,7 +8,7 @@ class Pet extends Model
 {
     protected $table = 'pets';   
     public $timestamps = false;
-    protected $fillable = ['nombre','tipo','items_id'];   
+    protected $fillable = ['nombre','tipo','item_id'];   
 
     public function item() 
 { 

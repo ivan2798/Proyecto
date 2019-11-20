@@ -15,8 +15,9 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::all();   
-        $items = item::all();
+        $pets = Pet::with('item')->get();
+        //dd($pets);
+        //$items = item::all();
         return view('pets.petsIndex', compact('pets'));
     }
 
@@ -27,7 +28,7 @@ class PetController extends Controller
      */
     public function create()
     { 
-        $items = item::pluck('tipo');
+        $items = item::pluck('tipo', 'id');
         return view('pets.petsForm', ['items' => $items]); 
 
     }
@@ -42,7 +43,6 @@ class PetController extends Controller
     {
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
-
 
         Pet::create($request->all());  
         session()->flash('storep','Agregado realizado');

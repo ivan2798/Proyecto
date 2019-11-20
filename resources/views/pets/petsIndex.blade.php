@@ -38,6 +38,7 @@
   <a href="{{route('pets.show',$pet->id)}}" >_VER</a>
     </div>
     <h4>{{ $pet->nombre}} <span> {{ $pet->tipo}}</span></h4>
+         <p>  {{ $pet->item->vida }} </p>
   </div>  
   </div>   
 @endforeach

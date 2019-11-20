@@ -68,7 +68,7 @@
 
       <div class="form-group">
           {!! Form::label('selecciona item') !!}
-          {!! Form::select('items_id',$items,null,['class' => 'form-control']) !!}
+          {!! Form::select('item_id',$items,null,['class' => 'form-control']) !!}
       </div>
       
       <div class="text-center"><button type="submit">ENVIAR</button></div>  

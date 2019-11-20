@@ -17,7 +17,7 @@ class CreatePetsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('tipo'); 
-            $table->integer('items_id');
+            $table->integer('item_id');
         });
     }
 
