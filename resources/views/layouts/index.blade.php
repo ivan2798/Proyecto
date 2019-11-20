@@ -112,6 +112,7 @@
           <p>LISTA DE REGISTRADOS</p>
         </div>
 
+
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a href = "{{ route('jugadores.create')}}" class="btn btn-succes"> AGREGAR JUGADOR</a>  

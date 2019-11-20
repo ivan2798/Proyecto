@@ -50,6 +50,7 @@
         <a href="#intro" class="scrollto"><img src="{{ asset('asset/img/logo.png') }}" alt="" title=""></a>
       </div>
 
+
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="{{route('jueces')}}">Jueces</a></li> 
