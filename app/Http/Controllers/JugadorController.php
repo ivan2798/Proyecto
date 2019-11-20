@@ -100,7 +100,7 @@ class JugadorController extends Controller
     public function destroy(Jugador $jugadores)
     {
         $jugadores->delete();  
-        session()->flash('statusj','Destruido realizado');
+        session()->flash('statusj','Destruido LOGICO realizado');
         return redirect()->route('jugadores.index');
     }
 }
