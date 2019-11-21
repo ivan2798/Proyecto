@@ -12,7 +12,6 @@
   <link href="{{ asset('asset/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('asset/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
@@ -24,7 +23,6 @@
   <link href="{{ asset('asset/lib/animate/animate.min.css') }}" rel="stylesheet">
   <link href="{{ asset('asset/lib/venobox/venobox.css') }}" rel="stylesheet">
   <link href="{{ asset('asset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 
   <!-- Main Stylesheet File -->
   <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
@@ -38,7 +36,7 @@
 </head>
 
 <body>
- 
+
     <!--==========================
     Header
   ============================-->
@@ -107,82 +105,12 @@
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
-   <!--==========================
-      Gallery Section
-    ============================-->
-    <section id="gallery" class="wow fadeInUp">
+  <!--==========================
+    Intro Section
+  ============================-->
+  
 
-      <div class="container">
-        <div class="section-header">
-          <h2>Pokemon confirmados</h2>
-          <p>TIERS NU,UU,RU,OU</p>
-        </div>
-      </div>
-
-      <div class="owl-carousel gallery-carousel">
-        <a href="{{ asset('asset/img/gallery/1.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/1.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/2.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/2.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/3.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/3.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/4.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/4.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/5.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/5.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/6.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/6.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/7.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/7.jpg') }}" alt=""></a>
-        <a href="{{ asset('asset/img/gallery/8.jpg') }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('asset/img/gallery/8.jpg') }}" alt=""></a>
-      </div>
-
-    </section>
-
-    <!--==========================
-      Contact Section
-    ============================-->
-    @yield('contactame') 
-
-    <!--==========================
-      Speakers Section
-    ============================-->
-    <section id="speakers" class="wow fadeInUp">
-      <div class="container">
-        <div class="section-header">
-          <h2>INVITADOS</h2>
-          <p>PERSONAS INVITADAS</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker">
-              <img src="{{ asset('asset/img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
-              <div class="details">
-                <h3>Satoshi Tajiri</h3>
-                <p>Creador de pokemon</p>
-                <div class="social">
-                  <p>INVITADO</p>
-                </div>
-              </div>
-            </div>
-          </div> 
-      <div class="col-lg-4 col-md-6">
-            
-          </div>
-          
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker">
-              <img src="{{ asset('asset/img/speakers/3.jpg') }}" alt="Speaker 3" class="img-fluid">
-              <div class="details">
-                <h3>Shigeru Miyamot</h3>
-                <p>Creador de smash</p>
-                <div class="social">
-                <p>INVITADO</p>
-                </div>
-              </div>
-            </div>
-          </div>      
-         
-        </div>
-      </div>
-
-    </section>
-     
-
+  @yield('tabla')
 
 <a href="{{ asset('asset/#') }}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 <!-- JavaScript Libraries -->
@@ -199,21 +127,8 @@
   <!-- Contact Form JavaScript File -->
   <script src="{{ asset('asset/contactform/contactform.js') }}"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script> 
-  <script type="text/javascript"> 
-     $(document).ready(function() {
-    $('.jugadores').select2({ 
-      placeholder: "selecciona entrenador"
-    });
-});
-  </script>
-
-
   <!-- Template Main Javascript File -->
-  <script src="{{ asset('asset/js/main.js') }}"></script> 
-
-
-  
+  <script src="{{ asset('asset/js/main.js') }}"></script>
 </body>
 
 </html>

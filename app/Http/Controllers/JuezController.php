@@ -14,5 +14,10 @@ class JuezController extends Controller
         ]; 
 
         return view('history',compact('portafolio'));
+    } 
+    
+    public function inicio() 
+    {
+    return view('welcome'); 
     }
 }

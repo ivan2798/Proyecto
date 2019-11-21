@@ -45,21 +45,62 @@
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><img src="{{ asset('asset/img/logo.png') }}" alt="" title=""></a>
+        <a href="{{ action('JuezController@inicio')}}" class="scrollto"><img src="{{ asset('asset/img/logo.png') }}" alt="" title=""></a>
       </div>
-
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{route('jueces')}}">Jueces</a></li> 
+          <li><a href="{{route('jueces')}}">Jueces</a></li>  
+          
           <li><a href="{{route('items')}}">Items </a></li>
           <li><a href="{{ route('jugadores.index')}}">L jugadores</a></li>
           <li><a href="{{ route('lideres.index')}}">L lideres</a></li> 
           <li><a href="{{ route('pets.index')}}">L pokemons</a></li>
           <li><a href="{{ route('jugadores.create')}}">F jugadores</a></li>
           <li><a href="{{ route('lideres.create')}}">F lideres</a></li> 
-          <li><a href="{{ route('pets.create')}}">F pokemons</a></li>
+          <li><a href="{{ route('pets.create')}}">F pokemons</a></li> 
+    
+        </ul> 
+
+        <ul class="navbar-nav ml-auto"> 
+        @guest
+                      <li class="nav-item dropdown"> 
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     login@ejemplo.com  <span class="caret"></span>
+                            </a>  
+
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                            
+                                <a class="dropdown-item"  href="{{ route('login') }}">{{ __('Login') }}</a>
+                           
+                            @if (Route::has('register'))
+                                    <a class="dropdown-item"  href="{{ route('register') }}">{{ __('Register') }}</a>
+                            @endif  
+                            </div>
+                        </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+
+
         </ul>
+
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
