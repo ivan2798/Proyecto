@@ -25,8 +25,10 @@
     <div class="row schedule-item">
               <div class="col-md-2"><i>{{ $pets->id}}</i></div>
               <div class="col-md-6">  
-                <h4>{{ $pets->nombre}}<span>  {{ $pets->tipo}}<span> </h4>
-              </div> 
+                <h4>{{ $pets->nombre}}<span>  {{ $pets->tipo}}<span> </h4> 
+                <p> Item n{{ $pets->item_id }}: en lista veras la vida obtenida</p>
+              </div>  
+             
 			  <div>  
 			  <div class="col-md-4">  
                 <a href="{{route('pets.edit',$pets->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 

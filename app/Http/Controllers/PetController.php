@@ -44,7 +44,8 @@ class PetController extends Controller
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
 
-        Pet::create($request->all());  
+        Pet::create($request->all());   
+        //dd($request);
         session()->flash('storep','Agregado realizado');
         return redirect()->route('pets.index');
     }
@@ -67,8 +68,9 @@ class PetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Pet $pets)
-    {
-        return view('pets.petsForm',compact('pets'));
+    { 
+        $items = item::pluck('tipo', 'id');
+        return view('pets.petsForm',compact('pets') ,['items' => $items]);
     }
 
     /**
@@ -85,10 +87,10 @@ class PetController extends Controller
         
         $pets->nombre = $request->nombre; 
         $pets->tipo = $request->tipo; 
-      
+        $pets->item_id = $request->item_id; 
+        $pets->save();   
         
-
-        $pets->save();  
+        
 
         session()->flash('upp','Actualizado realizado');
         return redirect()->route('pets.show',$pets->id);

@@ -16,7 +16,6 @@ class CreateJugadorLiderTable extends Migration
         Schema::create('jugador_lider', function (Blueprint $table) {
             $table->bigIncrements('id');  
 
-
             $table->integer('jugador_id')->unsigned();    
             $table->integer('lider_id')->unsigned();  
 

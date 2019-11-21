@@ -46,9 +46,8 @@ class LiderController extends Controller
         //Lider::create($request->all());   
         $lider->nombre = $request->nombre; 
         $lider->tipo = $request->tipo; 
-
+        
         $lider->save(); 
-
         $lider->jugadores()->sync($request->jugadores, false);
 
         session()->flash('storel','Agregado realizado');
@@ -97,7 +96,9 @@ class LiderController extends Controller
         
 
         $lideres->save();  
-        $lideres->jugadores()->sync($request->jugadores);
+        $lideres->jugadores()->sync($request->jugadores); 
+
+        
         session()->flash('upl','Actualizado realizado');
         return redirect()->route('lideres.show',$lideres->id);
     }
