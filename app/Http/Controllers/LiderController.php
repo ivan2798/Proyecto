@@ -15,7 +15,8 @@ class LiderController extends Controller
      */
     public function index()
     {
-        $lideres = Lider::all();  
+        //$lideres = Lider::all();   
+        $lideres = Lider::with('jugadores')->get();
         return view('lideres.lideresIndex', compact('lideres'));
     }
 

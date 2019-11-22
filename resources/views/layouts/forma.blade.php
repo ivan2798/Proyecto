@@ -140,7 +140,7 @@
      
 
 
-<a href="{{ asset('asset/#') }}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    <a href="{{ asset('asset/#') }}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 <!-- JavaScript Libraries -->
 <script src="{{ asset('asset/lib/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('asset/lib/jquery/jquery-migrate.min.js') }}"></script>
@@ -159,7 +159,6 @@
   <script type="text/javascript"> 
     
     $('.jugadores').select2().val({!! json_encode($lideres->jugadores()->allRelatedIds()) !!}).trigger('change');
-
   </script>
 
 
