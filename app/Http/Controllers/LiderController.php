@@ -62,7 +62,8 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Lider $lideres)
-    { 
+    {  
+        $this->authorize('lideresp',$lideres);
         $jugadores = Jugador::pluck('nombre','id');
         return view('lideres.lideresShow', ['lideres' => $lideres, 'jugadores' => $jugadores]);
     }
@@ -74,7 +75,8 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Lider $lideres)
-    { 
+    {  
+        $this->authorize('lideresp',$lideres);
         $jugadores = Jugador::pluck('nombre','id');  
         return view('lideres.lideresFormUp', ['lideres' => $lideres, 'jugadores' => $jugadores]);
     }
@@ -87,7 +89,8 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Lider $lideres)
-    {
+    { 
+        $this->authorize('lideresp',$lideres);
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
         
@@ -112,7 +115,7 @@ class LiderController extends Controller
      */
     public function destroy(Lider $lideres)
     {
-        
+        $this->authorize('lideresp',$lideres);
         $lideres->delete();  
         session()->flash('statusl','Destruido realizado');
         return redirect()->route('lideres.index');
