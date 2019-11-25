@@ -19,5 +19,10 @@ class Jugador extends Model
    public function lideres() 
    { 
        return $this->belongsToMany('App\Lider');
+   } 
+
+   public function archivos()
+   {
+       return $this->morphMany(Archivo::class, 'modelo');
    }
 }

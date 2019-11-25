@@ -38,7 +38,9 @@
                     <button type = "submit" class = "btn  btn-danger">ELIMINAR LOGICO</button>
                 </form>
               </div> 
-			</div>
+			</div> 
+      @include('archivos.archivoForm', ['modelo_id' => $jugadores->id, 'modelo_type' => 'App\Jugador'])
+      @include('archivos.archivoIndex', ['archivos' => $jugadores->archivos])
             </div>
 
 

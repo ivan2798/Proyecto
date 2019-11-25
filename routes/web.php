@@ -17,7 +17,10 @@ Route::middleware(['auth'])->group( function(){
     Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']);  
     
     Route::resource('/pets','PetController')->parameters(['pets' => 'pets']); 
-
+    
+    Route::post('archivo/cargar', 'ArchivoController@upload')->name('archivo.upload');
+    Route::get('archivo/{archivo}/descargar', 'ArchivoController@download')->name('archivo.download');
+    Route::post('archivo/{archivo}/borrar', 'ArchivoController@delete')->name('archivo.delete');
 
 });
 Auth::routes(['verify' => true]);
@@ -30,4 +33,5 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 });
 
 
-Route::get('/', 'JuezController@inicio') ;
+Route::get('/', 'JuezController@inicio') ; 
+

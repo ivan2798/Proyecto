@@ -42,7 +42,9 @@
                     <button type = "submit" class = "btn  btn-danger">ELIMINAR</button>
                 </form>
               </div> 
-			</div>
+			</div> 
+      @include('archivos.archivoForm', ['modelo_id' => $lideres->id, 'modelo_type' => 'App\Lider'])
+      @include('archivos.archivoIndex', ['archivos' => $lideres->archivos])
             </div>
 
 

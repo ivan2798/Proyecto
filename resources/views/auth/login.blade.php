@@ -57,7 +57,8 @@
                                     {{ __('Login') }}
                                 </button>
                                 
-                                <a href="login/facebook" class="btn btn-success"> Entrar con facebook</a>
+                               
+                                
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
