@@ -30,8 +30,5 @@ class Lider extends Model
        return $this->morphMany(Archivo::class, 'modelo');
    } 
 
-  /* public function user()
-   {
-       return $this->belongsTo(User::class);
-   }*/
+  
 }

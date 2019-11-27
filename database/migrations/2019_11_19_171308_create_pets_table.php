@@ -18,7 +18,8 @@ class CreatePetsTable extends Migration
             $table->integer('items_id')->unsigned(); 
             $table->string('nombre');
             $table->string('tipo'); 
-            
+            $table->integer('users_id')->unsigned();  
+            $table->foreign('users_id')->references('id')->on('users');
             $table->foreign('items_id')->references('id')->on('items');
            
         });

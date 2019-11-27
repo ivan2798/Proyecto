@@ -124,12 +124,4 @@ class LiderController extends Controller
         return redirect()->route('lideres.index');
     } 
 
-    public function notificarEnvio(Lider $lideres)
-    {
-        //Carga los usuarios relacionados con un proyecto
-        $lideres->load('jugadores');
-        //Envía correo al usuario
-        Mail::to($lideres->jugadores->email)->send(new Enviar($lideres));
-        return redirect()->route('lideres.index');
-    }
 }

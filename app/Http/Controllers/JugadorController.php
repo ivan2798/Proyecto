@@ -36,7 +36,8 @@ class JugadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
+    {  
+        $request->merge(['user_id' => \Auth::id()]);
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'edad' => 'required|integer|between:10,20'] ); 
 

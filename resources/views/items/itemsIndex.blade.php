@@ -23,8 +23,14 @@
 <div class="row schedule-item">
   <div class="col-md-2"><i>{{ $item->id}}</i></div>
   <div class="col-md-10">
-    <h4>{{ $item->tipo}} <span> {{ $item->vida}}</span></h4> 
-  </div>  
+    <h4>{{ $item->tipo}} <span> {{ $item->vida}}</span></h4>  
+    <p> 
+    @foreach($item->pets as $pet) 
+    <span class="badge badge-primary">{{  $pet->tipo }}</span>
+    @endforeach 
+    </p>
+  </div>   
+ 
   </div> 
   @endforeach   
 

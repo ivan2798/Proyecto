@@ -9,7 +9,7 @@ class Jugador extends Model
 { 
     use SoftDeletes;
     protected $table = 'jugadors';  
-    protected $fillable = ['nombre','edad','created_at','updated_at'];  
+    protected $fillable = ['nombre','edad','created_at','updated_at','user_id'];  
 
     public function getnombreAttribute($value) 
     { 
@@ -26,5 +26,7 @@ class Jugador extends Model
        return $this->morphMany(Archivo::class, 'modelo');
    } 
 
-   
+   public function user(){ 
+    return $this->belongsTo(User::class);
+    }
 }

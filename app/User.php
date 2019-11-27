@@ -38,14 +38,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ]; 
 
-    /*public function pets()
-    {
-        return $this->hasMany(Pet::class);
-    } 
-
+    public function pets() 
+    { 
+    return $this->hasMany(Pet::class, 'users_id','id');
+    }
+    
     public function lideres()
     {
         return $this->hasMany(Lider::class);
-    }*/
+    }
 
 }

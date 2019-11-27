@@ -11,7 +11,7 @@
 |
 */
 Route::middleware(['vacaciones_verano'])->group( function(){
-Route::middleware(['auth'])->group( function(){
+Route::middleware(['auth','verified'])->group( function(){
     Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores'])->middleware('vacaciones_verano');
 
     Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']);  
@@ -21,18 +21,19 @@ Route::middleware(['auth'])->group( function(){
     Route::post('archivo/cargar', 'ArchivoController@upload')->name('archivo.upload');
     Route::get('archivo/{archivo}/descargar', 'ArchivoController@download')->name('archivo.download');
     Route::post('archivo/{archivo}/borrar', 'ArchivoController@delete')->name('archivo.delete');
-
+    Route::get('/items','ItemController@index')->name('items');  
+    Route::get('pets/{pet}/enviado', 'PetController@notificarEnvio')->name('pets.enviado');
 });
 Auth::routes(['verify' => true]);
 
-Route::get('/items','ItemController@index')->name('items'); 
+
 
 Route::get('/jueces','JuezController@historia')->name('jueces');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'); 
 });
 
-Route::get('lideres/{lideres}/enviado', 'LiderController@notificarEnvio')->name('lideres.enviado');
+
 
 Route::get('/', 'JuezController@inicio') ; 
 

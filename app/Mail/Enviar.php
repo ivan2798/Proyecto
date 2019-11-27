@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Lider; 
+use App\Pet; 
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -13,15 +13,15 @@ class Enviar extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $lider;
+    public $pet;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Lider $lider)
+    public function __construct(Pet $pet)
     {
-        $this->lider = $lider;
+        $this->pet = $pet;
     }
 
     /**

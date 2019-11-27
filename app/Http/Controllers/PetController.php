@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Pet; 
-use App\item;
+use App\Item; 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Enviar;
 use Illuminate\Http\Request;
 
 class PetController extends Controller
@@ -15,7 +17,7 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::with('item')->get();
+        $pets = Pet::with('item:id,tipo','user')->get();
         //dd($pets);
         //$items = item::all();
         return view('pets.petsIndex', compact('pets'));
@@ -28,7 +30,7 @@ class PetController extends Controller
      */
     public function create()
     { 
-        $items = item::pluck('tipo', 'id');
+        $items = Item::pluck('tipo', 'id');
         return view('pets.petsForm', ['items' => $items]); 
 
     }
@@ -44,8 +46,9 @@ class PetController extends Controller
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
         
-        //$request->merge(['user_id' => \Auth::id()]);
-
+        $request->merge(['users_id' => \Auth::id()]);
+        
+        //dd($request);
         Pet::create($request->all());   
         //dd($request);
         session()->flash('storep','Agregado realizado');
@@ -71,7 +74,7 @@ class PetController extends Controller
      */
     public function edit(Pet $pets)
     { 
-        $items = item::pluck('tipo', 'id');
+        $items = Item::pluck('tipo', 'id');
         return view('pets.petsForm',compact('pets') ,['items' => $items]);
     }
 
@@ -108,6 +111,16 @@ class PetController extends Controller
     {
         $pets->delete();  
         session()->flash('statusp','Destruido realizado');
+        return redirect()->route('pets.index');
+    } 
+
+    public function notificarEnvio(Pet $pet)
+    { 
+        $pet->load('user');  
+        //$pet = Pet::with('user')->get();
+        //dd($pet);
+        //Envía correo al usuario
+        Mail::to($pet->user->email)->send(new Enviar($pet));
         return redirect()->route('pets.index');
     }
 }

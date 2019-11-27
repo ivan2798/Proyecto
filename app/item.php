@@ -12,7 +12,7 @@ class Item extends Model
 
     public function pets() 
     { 
-    return $this->hasMany(Pet::class);
+    return $this->hasMany(Pet::class, 'items_id','id');
     }
 } 
 
