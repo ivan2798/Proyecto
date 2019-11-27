@@ -14,9 +14,14 @@ class CreateLidersTable extends Migration
     public function up()
     {
         Schema::create('liders', function (Blueprint $table) {
-            $table->increments('id'); 
+            $table->increments('id');  
+            //$table->unsignedBigInteger('user_id');
             $table->string('nombre'); 
-            $table->string('tipo');
+            $table->string('tipo'); 
+
+            //$table->foreign('user_id')
+            //->references('id')
+            //->on('users');
         });
     }
 

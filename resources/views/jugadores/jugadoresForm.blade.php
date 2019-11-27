@@ -49,7 +49,7 @@
 
       </div>
   
- <div class="form"> 
+ <div class="form">  
     @if(isset($jugadores))    
       {!! Form::model($jugadores, ['route' => ['jugadores.update', $jugadores->id], 'method' => 'PATCH']) !!}
     @else 

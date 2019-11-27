@@ -43,6 +43,8 @@ class PetController extends Controller
     {
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
+        
+       // $request->merge(['user_id' => \Auth::id()]);
 
         Pet::create($request->all());   
         //dd($request);

@@ -3,9 +3,9 @@
 <body>
     <h2>Contendientes</h2>
 
-    <p>Estimando(a) {{ $ }}</p>
+    <p>Estimando(a) {{ $lider->nombre }}</p>
     <p>
-        Se le notifica que su proyecto <b>{{ $ }}</b>
+        Se le notifica que sus jugadores son <b>{{ $ }}</b>
         fue aprovado.
     </p>
 </body>

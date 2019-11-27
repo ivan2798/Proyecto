@@ -32,6 +32,6 @@ class Enviar extends Mailable
     public function build()
     { 
 
-        return $this->from('pmodular@cucei.udg.mx')->view('emails.mensaje');
+        return $this->from('Torneo@unova.test.mx')->view('emails.mensaje');
     }
 }

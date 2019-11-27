@@ -4,10 +4,13 @@
 <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
 
 <div class="row schedule-item">
-  <div class="col-md-2"><i>0</i></div>
-  <div class="col-md-10"> 
+  <div class="col-md-2"><i>N</i></div>
+  <div class="col-md-10">  
+  <div class="speaker">
+     <span>_MAS</span>
+  </div>
     <h4>Nombre <span>  Edad<span> </h4>
-    <p>Lider</p>
+    <p>Fecha de creacion/modificacion</p> 
   </div>
 </div>
 

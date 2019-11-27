@@ -36,5 +36,16 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+    ]; 
+
+    /*public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    } 
+
+    public function lideres()
+    {
+        return $this->hasMany(Lider::class);
+    }*/
+
 }

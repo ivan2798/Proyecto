@@ -32,6 +32,7 @@ Route::get('/jueces','JuezController@historia')->name('jueces');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'); 
 });
 
+Route::get('lideres/{lideres}/enviado', 'LiderController@notificarEnvio')->name('lideres.enviado');
 
 Route::get('/', 'JuezController@inicio') ; 
 

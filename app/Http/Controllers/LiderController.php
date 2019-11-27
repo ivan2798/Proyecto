@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Lider; 
-use App\Jugador;
-use Illuminate\Http\Request;
+use App\Jugador; 
+use App\Mail\Enviar;
+use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\Mail;
 
 class LiderController extends Controller
 {
@@ -44,7 +46,8 @@ class LiderController extends Controller
         'tipo' => 'required|string|min:4|max:8'] ); 
 
         $lider = new Lider;
-        //Lider::create($request->all());   
+        //Lider::create($request->all()); 
+       // $request->merge(['user_id' => \Auth::id()]);   
         $lider->nombre = $request->nombre; 
         $lider->tipo = $request->tipo; 
         
@@ -76,7 +79,7 @@ class LiderController extends Controller
      */
     public function edit(Lider $lideres)
     {  
-        //$this->authorize('lideresp',$lideres);
+        $this->authorize('lideresp',$lideres);
         $jugadores = Jugador::pluck('nombre','id');  
         return view('lideres.lideresFormUp', ['lideres' => $lideres, 'jugadores' => $jugadores]);
     }
@@ -90,7 +93,7 @@ class LiderController extends Controller
      */
     public function update(Request $request, Lider $lideres)
     { 
-       // $this->authorize('lideresp',$lideres);
+        $this->authorize('lideresp',$lideres);
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'tipo' => 'required|string|min:4|max:8'] ); 
         
@@ -115,9 +118,18 @@ class LiderController extends Controller
      */
     public function destroy(Lider $lideres)
     {
-        //$this->authorize('lideresp',$lideres);
+        $this->authorize('lideresp',$lideres);
         $lideres->delete();  
         session()->flash('statusl','Destruido realizado');
+        return redirect()->route('lideres.index');
+    } 
+
+    public function notificarEnvio(Lider $lideres)
+    {
+        //Carga los usuarios relacionados con un proyecto
+        $lideres->load('jugadores');
+        //Envía correo al usuario
+        Mail::to($lideres->jugadores->email)->send(new Enviar($lideres));
         return redirect()->route('lideres.index');
     }
 }

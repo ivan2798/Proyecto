@@ -37,7 +37,14 @@
           </li> 
           <li class="nav-item">
             <a href = "{{ route('lideres.index')}}" class="btn btn-succes">LISTA LIDERES</a>
-          </li>
+          </li> 
+
+          <li class="nav-item">
+            <a href = "{{ route('pets.index')}}" class="btn btn-succes">LISTA POKEMONS</a>
+          </li> 
+
+          
+
         </ul>
 
         <h3 class="sub-heading">La zona VGC sera de un tiempo limite de 20 minutos, la zona individual tendra 30 minutos 

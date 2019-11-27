@@ -8,7 +8,7 @@ class Lider extends Model
 {
     protected $table = 'liders';   
     public $timestamps = false;
-    protected $fillable = ['nombre','tipo'];  
+    protected $fillable = ['nombre','tipo','user_id'];  
 
     public function getnombreAttribute($value) 
     { 
@@ -28,5 +28,10 @@ class Lider extends Model
    public function archivos()
    {
        return $this->morphMany(Archivo::class, 'modelo');
-   }
+   } 
+
+  /* public function user()
+   {
+       return $this->belongsTo(User::class);
+   }*/
 }
