@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class item extends Model
+class Item extends Model
 {
     protected $table = 'items';   
     public $timestamps = false;
@@ -12,7 +12,7 @@ class item extends Model
 
     public function pets() 
     { 
-    return $this->hasMany('App\Pet');
+    return $this->hasMany(Pet::class);
     }
 } 
 

@@ -30,5 +30,7 @@ class CreateJugadorsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('jugadors');
-    }
+    } 
+
+    
 }

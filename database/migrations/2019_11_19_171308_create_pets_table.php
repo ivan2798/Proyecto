@@ -14,15 +14,13 @@ class CreatePetsTable extends Migration
     public function up()
     {
         Schema::create('pets', function (Blueprint $table) {
-            $table->bigIncrements('id'); 
-            //$table->unsignedBigInteger('user_id');
+            $table->bigIncrements('id');  
+            $table->integer('items_id')->unsigned(); 
             $table->string('nombre');
             $table->string('tipo'); 
-            $table->integer('item_id'); 
-        
-           // $table->foreign('user_id')
-            // ->references('id')
-            // ->on('users');
+            
+            $table->foreign('items_id')->references('id')->on('items');
+           
         });
     }
 

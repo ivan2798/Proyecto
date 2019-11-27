@@ -24,5 +24,7 @@ class Jugador extends Model
    public function archivos()
    {
        return $this->morphMany(Archivo::class, 'modelo');
-   }
+   } 
+
+   
 }

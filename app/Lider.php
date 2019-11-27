@@ -8,7 +8,7 @@ class Lider extends Model
 {
     protected $table = 'liders';   
     public $timestamps = false;
-    protected $fillable = ['nombre','tipo','user_id'];  
+    protected $fillable = ['nombre','tipo'];  
 
     public function getnombreAttribute($value) 
     { 

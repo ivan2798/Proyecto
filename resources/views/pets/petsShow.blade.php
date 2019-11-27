@@ -4,11 +4,9 @@
   <div class="row schedule-item">
               <div class="col-md-2"><i>0</i></div>
               <div class="col-md-6">  
-			      <div class="speaker">
-                  <p >FOTO</p>
-                </div>
+			     
                 <h4>Nombre <span>  Tipo<span> </h4>
-                <p>Lider</p>
+                <p>Vida</p>
               </div> 
 			  <div>  
 			  <div class="col-md-4">  
@@ -26,7 +24,7 @@
               <div class="col-md-2"><i>{{ $pets->id}}</i></div>
               <div class="col-md-6">  
                 <h4>{{ $pets->nombre}}<span>  {{ $pets->tipo}}<span> </h4> 
-                <p> Item n{{ $pets->item_id }}: en lista veras la vida obtenida</p>
+                <p> {{$pets->item->vida}}</p>
               </div>  
              
 			  <div>  
