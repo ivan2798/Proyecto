@@ -53,17 +53,18 @@
   
  <div class="form"> 
       {!! Form::model($lideres, ['route' => ['lideres.update', $lideres->id], 'method' => 'PATCH']) !!} 
-    @csrf
       <div class="form-row">
-        <div class="form-group col-md-6">   
+        <div class="form-group col-md-6">  
+          {!! Form::label('nombre', 'Nombre') !!}   
           {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 
         </div>
-        <div class="form-group col-md-6"> 
+        <div class="form-group col-md-6">  
+          {!! Form::label('tipo', 'Tipo') !!}
           {!! Form::text('tipo', null, ['placeholder' => 'tipo','class' => 'form-control']) !!} 
         </div> 
       </div>
       <div class="form-group">
-          {!! Form::label('selecciona entrenador') !!}
+          {!! Form::label('jugadores[]','Jugadores') !!}
           {!! Form::select('jugadores[]',$jugadores,null,['multiple' => 'multiple', 'class' => 'form-control jugadores']) !!}
       </div>
 

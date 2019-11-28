@@ -68,7 +68,7 @@ class JugadorController extends Controller
      */
     public function edit(Jugador $jugadores)
     {  
-         $this->authorize('jugadorp',$jugadores);
+        // $this->authorize('jugadorp',$jugadores);
         return view('jugadores.jugadoresForm',compact('jugadores'));
     }
 
@@ -82,7 +82,7 @@ class JugadorController extends Controller
     public function update(Request $request, Jugador $jugadores)
     {  
 
-       $this->authorize('jugadorp',$jugadores);
+       //$this->authorize('jugadorp',$jugadores);
         
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
         'edad' => 'required|integer|between:10,20'] ); 
@@ -106,7 +106,7 @@ class JugadorController extends Controller
      */
     public function destroy(Jugador $jugadores)
     { 
-        $this->authorize('view',$jugadores);
+       // $this->authorize('view',$jugadores);
         $jugadores->delete();  
         session()->flash('statusj','Destruido LOGICO realizado');
         return redirect()->route('jugadores.index');

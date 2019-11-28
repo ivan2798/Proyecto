@@ -55,18 +55,20 @@
     @else 
       {!! Form::open(['route' => 'pets.store']) !!}
     @endif 
-    @csrf 
+    
     <div>
       <div class="form-row">
         <div class="form-group col-md-6">  
+          {!! Form::label('nombre', 'Nombre') !!} 
           {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 
         </div>
-        <div class="form-group col-md-6"> 
+        <div class="form-group col-md-6">  
+          {!! Form::label('tipo', 'Tipo') !!}
           {!! Form::text('tipo', null, ['placeholder' => 'tipo','class' => 'form-control']) !!}
         </div>   
         </div> 
         <div class="form-group">
-          {!! Form::label('selecciona item') !!}
+          {!! Form::label('items_id', 'ITEM') !!}
           {!! Form::select('items_id',$items,null,['class' => 'form-control']) !!}
         </div> 
         <button type="submit" class="btn btn-primary">Enviar</button> 

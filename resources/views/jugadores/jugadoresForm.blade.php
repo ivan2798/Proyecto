@@ -55,12 +55,14 @@
     @else 
       {!! Form::open(['route' => 'jugadores.store']) !!}
     @endif 
-    @csrf
+    
       <div class="form-row">
-        <div class="form-group col-md-6">  
+        <div class="form-group col-md-6">   
+          {!! Form::label('nombre','Nombre') !!}
           {!! Form::text('nombre', null, ['placeholder' => 'nombre','class' => 'form-control']) !!} 
         </div>
         <div class="form-group col-md-6"> 
+          {!! Form::label('edad','EDAD') !!} 
           {!! Form::number('edad', null, ['placeholder' => 'edad','class' => 'form-control']) !!}
         </div>
       </div>

@@ -21,19 +21,18 @@ Route::middleware(['auth','verified'])->group( function(){
     Route::post('archivo/cargar', 'ArchivoController@upload')->name('archivo.upload');
     Route::get('archivo/{archivo}/descargar', 'ArchivoController@download')->name('archivo.download');
     Route::post('archivo/{archivo}/borrar', 'ArchivoController@delete')->name('archivo.delete');
-    Route::get('/items','ItemController@index')->name('items');  
+  
     Route::get('pets/{pet}/enviado', 'PetController@notificarEnvio')->name('pets.enviado');
 });
 Auth::routes(['verify' => true]);
-
-
 
 Route::get('/jueces','JuezController@historia')->name('jueces');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'); 
 });
 
-
-
+Route::get('/APIITEM','ApiController@apiItem')->name('apisitem');
+Route::get('/APIPET','ApiController@apiPet')->name('apispet'); 
+Route::get('/items','ItemController@index')->name('items');  
 Route::get('/', 'JuezController@inicio') ; 
 

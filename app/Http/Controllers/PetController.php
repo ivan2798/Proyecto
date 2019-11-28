@@ -44,7 +44,7 @@ class PetController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,['nombre' => 'required|string|min:4|max:8', 
-        'tipo' => 'required|string|min:4|max:8'] ); 
+        'tipo' => 'required|string|min:4|max:8','items_id' => 'required'] ); 
         
         $request->merge(['users_id' => \Auth::id()]);
         

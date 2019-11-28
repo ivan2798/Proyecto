@@ -41,8 +41,9 @@
   <div class="speaker">
   <a href="{{route('pets.show',$pet->id)}}" >_VER</a>
     </div>
-    <h4>{{ $pet->nombre}} <span> {{ $pet->tipo}}</span></h4>
-         <p>  {{ $pet->item->vida }} </p>
+    <h4>{{ $pet->nombre}} <span> {{ $pet->tipo}}</span></h4> 
+    
+         <p>  {{ $pet->item->tipo }} </p>
   </div>   
   <div class="col-md-4">   
   <span>  {{ $pet->user->email }} </span>
