@@ -42,8 +42,8 @@
       <div class="col-md-4">
         <div class="contact-email">
           <i class="ion-ios-email-outline"></i>
-          <h3>FECHA</h3>
-          <address>1</address>
+          <h3>ITEM</h3>
+          <address>FISICO</address>
         </div>
       </div>    
 
