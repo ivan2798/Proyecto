@@ -51,7 +51,8 @@
             </div>
       @else  
          <div class = "alert-warning" role="alert"> 
-          No se puede ver por policies y gates, solo puedes manipular datos si tu nombre(usuario) corresponde al/los  nombre/s(lider), recuerda el tema de los muttators y accesor. 
+          No se puede ver por policies y gates, solo puedes manipular datos si tu nombre(usuario) corresponde al/los  nombre/s(lider), recuerda el tema de los muttators y accesor.  
+          
         </div>  
       @endcan
 

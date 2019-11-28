@@ -19,7 +19,7 @@ class micomando extends Command
      *
      * @var string
      */
-    protected $description = 'Este es mi comando, borra cada hora la base de datos liders';
+    protected $description = 'Este es mi comando, borra cada hora la tabla liders';
 
     /**
      * Create a new command instance.

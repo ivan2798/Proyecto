@@ -49,7 +49,7 @@
 
      @else  
          <div class = "alert-warning" role="alert"> 
-          No se puede ver por policies y gates, solo puedes manipular datos si tu id(usuario) corresponde al id(jugador) 
+          No se puede ver por policies y gates, solo puedes manipular datos si tu id(usuario) corresponde al id_user(jugador)  
         </div>  
       @endcan
      

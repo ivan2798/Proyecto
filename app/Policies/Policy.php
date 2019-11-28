@@ -30,7 +30,8 @@ class Policy
      */
     public function jugadorp(User $user, Jugador $jugador)
     {
-        return $user->id == $jugador->id;
+        return $user->id == $jugador->user_id; 
+        
     }
 
     /**
