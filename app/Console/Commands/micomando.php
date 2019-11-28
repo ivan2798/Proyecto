@@ -19,7 +19,7 @@ class micomando extends Command
      *
      * @var string
      */
-    protected $description = 'Este es mi comando, borra cada hora la base de datos items';
+    protected $description = 'Este es mi comando, borra cada hora la base de datos liders';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,7 @@ class micomando extends Command
      */
     public function handle()
     {
-        DB::table('items')->delete(); 
+        DB::table('liders')->delete(); 
         echo"Todo listo";
     }
 }
